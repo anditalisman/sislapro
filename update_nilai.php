@@ -113,7 +113,6 @@ if(isset($_POST['submit'])){
 		
 		$id_pengawas=$_GET['id_pengawas'];
 		$id_subkon=$_GET['id_subkon'];
-		$id_pelajaran=$_GET['id_pelajaran'];
 		
 		$pengawas=mysql_fetch_array(mysql_query("select * from data_pengawas where id_pengawas='$id_pengawas'"));
 		$subkon=mysql_fetch_array(mysql_query("select * from setup_subkon where id_subkon='$id_subkon'"));
@@ -127,12 +126,12 @@ if(isset($_POST['submit'])){
         <table border="0" cellpadding="0" cellspacing="0"  id="id-form">
         <tr>
           <th valign="top">Nama pengawas</th>
-          <td><input type="text" class="inp-form" name="nomor_kavling" value="<?php echo $nama_pengawas;?>" disabled="disabled"/></td>
+          <td><input type="text" class="inp-form" value="<?php echo $nama_pengawas;?>" disabled="disabled"/></td>
           <td></td>
         </tr>         
         <tr>
           <th valign="top">subkon</th>
-          <td><input type="text" class="inp-form" name="nis" value="<?php echo $nama_subkon;?>" disabled="disabled"/></td>
+          <td><input type="text" class="inp-form" value="<?php echo $nama_subkon;?>" disabled="disabled"/></td>
           <td></td>
         </tr>
       </table>
@@ -142,13 +141,13 @@ if(isset($_POST['submit'])){
         <table border="0" width="48%" cellpadding="0" cellspacing="0" id="product-table">
         <tr>
             <th width="10%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor</a>	</th>
-            <th width="60%" class="table-header-repeat line-left minwidth-1"><a href="">Nama kavling</a></th>
+            <th width="60%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor kavling</a></th>
             <th width="30%" class="table-header-repeat line-left minwidth-1"><a href="">Nilai kavling</a></th>
         </tr>
         
         
         <?php
-		$view=mysql_query("SELECT * FROM tbl_nilai nilai, data_kavling kavling WHERE nilai.id_kavling=kavling.id_kavling and nilai.id_pengawas='$id_pengawas' and nilai.id_subkon='$id_subkon' and nilai.id_pelajaran='$id_pelajaran' order by kavling.nomor_kavling asc");
+		$view=mysql_query("SELECT * FROM tabel_nilai nilai, data_kavling kavling WHERE nilai.id_kavling=kavling.id_kavling and nilai.id_pengawas='$id_pengawas' and nilai.id_subkon='$id_subkon' order by kavling.nomor_kavling asc");
 		
 		$i = 1;
 		while($row=mysql_fetch_array($view)){
