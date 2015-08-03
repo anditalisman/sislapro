@@ -114,7 +114,7 @@ if(isset($_POST['submit'])){
 
         <!--  start product-table ..................................................................................... -->
         <form id="mainform" action="">
-        <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+        <table border="0" width="50%" cellpadding="0" cellspacing="0" id="product-table">
         <tr>
             <th width="5%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor</a>  </th>
             <th width="28%" class="table-header-repeat line-left minwidth-1"><a href="">Nama Subkon</a></th>
