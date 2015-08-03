@@ -90,8 +90,8 @@ if(isset($_POST['submit'])){
                     <tr>
                       <th valign="top">Tahap</th>
                       <td><select name="tahap"  class="styledselect_form_1">
-                        <option value="TAHAP 1"> TAHAP 1</option>
-                        <option value="TAHAP 2"> TAHAP 2</option>
+                        <!-- <option value="TAHAP 1"> TAHAP 1</option> -->
+                        <!-- <option value="TAHAP 2"> TAHAP 2</option> -->
                         <option value="TAHAP 3"> TAHAP 3</option>                       
                         </select>
                       </td>
@@ -100,7 +100,7 @@ if(isset($_POST['submit'])){
                     <tr>
                       <th valign="top">Type </th>
                       <td><select name="type"  class="styledselect_form_1">
-                        <option value="42/100"> 42/100</option>
+                        <!-- <option value="42/100"> 42/100</option> -->
                         <option value="27/70"> 27/70</option>                        
                         </select>
                       </td>
@@ -129,7 +129,7 @@ if(isset($_POST['submit'])){
 
       	<!--  start product-table ..................................................................................... -->
         <form id="mainform" action="">
-        <table border="0" width="100%" cellpadding="0" cellspacing="0" id="product-table">
+        <table border="0" width="60%" cellpadding="0" cellspacing="0" id="product-table">
         <tr>
             <th width="5%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor</a>	</th>
             <th width="28%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor kavling</a></th>
