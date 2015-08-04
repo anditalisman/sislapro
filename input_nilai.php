@@ -88,9 +88,6 @@ if(isset($_GET['id_pengawas'])){
 			<div class="step-no">1</div>
 			<div class="step-dark-left">Pilih Subkon</div>
 			<div class="step-dark-right">&nbsp;</div>
-			<!-- <div class="step-no-off">2</div>
-			<div class="step-dark-left">Pilih Subkon</div>
-			<div class="step-dark-right">&nbsp;</div> -->
 			<div class="step-no-off">2</div>
 			<div class="step-light-left">Input Nilai kavling</div>
 			<div class="step-light-right">&nbsp;</div>
@@ -108,13 +105,12 @@ if(isset($_GET['id_pengawas'])){
         <tr>
             <th width="10%" class="table-header-repeat line-left minwidth-1"><a href="">Nomor</a>	</th>
             <th width="60%" class="table-header-repeat line-left minwidth-1"><a href="">Nama Subkon</a></th>
-            <th width="30%" class="table-header-repeat line-left minwidth-1"><a href="">Kelas</a></th>
         </tr>
         
         
         <?php
 		$id_pengawas=$_SESSION['id_pengawas'];
-		$view=mysql_query("select * from tabel_pantauan pantauan, data_kavling kavling, data_subkon subkon, data_pengawas pengawas where pantauan.id_kavling=kavling.id_kavling and pantauan.id_subkon=subkon.id_subkon and pantauan.id_pengawas=pengawas.id_pengawas order by id_pantauan asc");
+		$view=mysql_query("select * from data_kavling kav, data_subkon subkon, data_pengawas pengawas where kav.id_subkon=subkon.id_subkon and kav.id_pengawas=pengawas.id_pengawas order by id_kavling asc");
 		
 		$no=0;
 		while($row=mysql_fetch_array($view)){
@@ -122,7 +118,6 @@ if(isset($_GET['id_pengawas'])){
 		<tr>
             <td><?php echo $no=$no+1;?></td>
             <td><a href="?page=input_nilai&id_pengawas=<?php echo $id_pengawas;?>&id_subkon=<?php echo $row['id_subkon'];?>&id_kavling=<?php echo $row['id_kavling'];?>" style="text-decoration:underline" title="Pilih Subkon"><?php echo $row['nama_subkon'];?></a></td>
-            <td><?php echo $row['nomor_kavling'];?></td>
         </tr>
 		<?php
 		}
